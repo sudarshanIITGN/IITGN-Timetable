@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable Scheduler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main_container">
+        <img src="{{ url_for('static', filename='image.png') }}" id="box1" alt="">
+        <form action="/timetable" method="POST" class="searchbar">
+            <img src="{{ url_for('static', filename='search.png') }}">
+            <input type="text" name="subjects" placeholder="Ex: ES 115, MA 205">
+        </form>
+        <br>
+        <div id="box3">Makes a timetable for you & lets you know which courses are clashing that you need to drop</div>
+        <div id="box4">Just Enter your subject code/name with commas</div>
+        <div id="results"></div>
+    </div>
+    <script>
+        document.querySelector('.searchbar').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const params = new URLSearchParams();
+            for (const pair of formData) {
+                params.append(pair[0], pair[1]);
+            }
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: params
+            });
+            const result = await response.text();
+            document.getElementById('results').innerHTML = result;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: black;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(schoolbell.ttf);
+}
+
+body {
+    background-color: #FFDE59;
+    height: 100%;
+}
+
+main {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.main_container {
+    background-color: #FFDE59;
+    position: absolute;
+    height: 600px;
+    width: 1000px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#box1 {
+    height: 374px;
+    width: 666px;
+    display: inline-block;
+}
+
+#box3, #box4 {
+    height: 50px;
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    font-family: myFont;
+    font-size: large;
+    color: #6D412A;
+}
+
+#box4 {
+    font-size: medium;
+}
+
+.searchbar {
+    width: 30%;
+    height: 6%;
+    background: #FBFCF5;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.searchbar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    padding: 24px 20px;
+}
+
+.searchbar img {
+    padding-left: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Add styling for the results section */
+#results {
+    width: 80%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #FFF9C4;
+    border: 1px solid #6D412A;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 500px) {
+    .main_container {
+        /* margin-top: 75px; */
+        margin-top: auto;
+        padding: 10px;
+        width: 300px;
+    }
+    #box1 {
+        width: 90%;
+        height: auto;
+    }
+    .searchbar {
+        /* display: flex;
+        flex-direction: column; */
+        align-items: center;
+        width: 85%;
+        height: 8%;
+    }
+    .searchbar img {
+        padding-left: 10px;
+        width: 20px;
+        height: 20px;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+    #box3, #box4 {
+        text-align: center;
+        width: 90%;
+    }
+    #box3{
+        font-size: 20px;
+    }
+    #box4{
+        margin-top: 50px;
+        /* font-size: 20px; */
+    }
+}
